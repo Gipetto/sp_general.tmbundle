@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/bin/bash
+sed "s/\\\n/\\
+/g"</string>
+	<key>input</key>
+	<string>document</string>
+	<key>name</key>
+	<string>\n to Line Break</string>
+	<key>output</key>
+	<string>replaceDocument</string>
+	<key>uuid</key>
+	<string>18C2865A-83AF-47BF-8BEB-9A4745359C8C</string>
+</dict>
+</plist>
