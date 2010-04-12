@@ -1,0 +1,14 @@
+# SP General
+
+Just a few helpers I like to keep around for development.
+
+- Tidy (specific config, probably useless to non-me users)
+- PHP Unserialize & Serialize
+- JSON Decode
+- \n to line break
+- strip blank lines
+- Base64 Encode
+- Append to end of line(s)
+- Copy File Path
+
+~shawn
