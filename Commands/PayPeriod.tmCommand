@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby -wKU
+require 'csv'
+
+data = $stdin.read()
+
+total = 0.0
+day = ''
+day_hours = []
+day_hours_total = 0.0
+
+data.split("\n").each { |i|
+	line = CSV.parse_line(i.gsub(/\\"/,''),',')
+	
+	if line[0] != day
+		if ! day.empty?
+			puts day + ' :: ' + day_hours.join(',') + ' :: (' + day_hours_total.to_s + ')' 
+		end
+		day_hours_total = 0.0
+		day_hours = []
+		day = line[0]
+	end
+	
+	h = line.pop
+	day_hours.push(h)
+	day_hours_total = (day_hours_total + h.to_f)
+	total = (total + h.to_f)
+	
+}
+puts day + ' :: ' + day_hours.join(',') + ' :: (' + day_hours_total.to_s + ')' 
+puts '============'
+puts total.to_s</string>
+	<key>input</key>
+	<string>document</string>
+	<key>name</key>
+	<string>PayPeriod</string>
+	<key>output</key>
+	<string>replaceDocument</string>
+	<key>uuid</key>
+	<string>E9DF6005-36B4-4C92-BD84-1932C4CC6E34</string>
+</dict>
+</plist>
