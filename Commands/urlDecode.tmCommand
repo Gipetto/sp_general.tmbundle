@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env php 
+&lt;?php
+parse_str(urldecode(file_get_contents('php://stdin')), $output);
+print_r($output);
+?&gt;</string>
+	<key>input</key>
+	<string>document</string>
+	<key>name</key>
+	<string>urlDecode</string>
+	<key>output</key>
+	<string>replaceDocument</string>
+	<key>uuid</key>
+	<string>BE0C23B5-9F44-4B74-847E-5A0E2FC44F91</string>
+</dict>
+</plist>
