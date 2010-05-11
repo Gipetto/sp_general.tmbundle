@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby -wKU
+require ENV['TM_SUPPORT_PATH'] + '/lib/exit_codes'
+
+hours_dev = hours_testing = hours_revisions = 0.0
+
+doc = $stdin.read()
+doc = doc.split(/---+/).map { |section|
+	section = '' if section.match(/^(## Totals)/)
+
+	if section != ''
+		time_block = section.split(/^(### )/);
+
+		time_block.each { |block|
+			if block.match(/^(Time)/)
+				h = time_block[0].match(/^([0-9\.]+)\s*hrs\s*$/)
+				hours_dev += h[1].to_f if h != nil
+
+				h = time_block[0].match(/^([0-9\.]+)\s*hrs testing\s*$/)
+				hours_testing += h[1].to_f if h != nil
+
+				h = time_block[0].match(/^([0-9\.]+)\s*hrs revisions\s*$/)
+				hours_revisions += h[1].to_f if h != nil
+			end
+		}
+	end 
+
+	section.strip();
+
+}.reject { |x|
+	x == ''
+}
+
+totals = [
+	"## Totals", 
+	" ",
+	"- time: " + hours_dev.to_s + " hrs",
+	"- time testing: " + hours_testing.to_s + " hrs testing",
+	"- time revisions: " + hours_revisions.to_s + " hrs revisions",
+	"- total: " + (hours_dev + hours_testing + hours_revisions).to_s + " hrs"
+	]
+
+doc.push(totals.join("\n"))
+
+TextMate.exit_replace_document(doc.flatten().join("\n\n\n---\n\n"));</string>
+	<key>input</key>
+	<string>document</string>
+	<key>keyEquivalent</key>
+	<string>@T</string>
+	<key>name</key>
+	<string>Tally Estimate Hours</string>
+	<key>output</key>
+	<string>replaceDocument</string>
+	<key>scope</key>
+	<string>text.html.markdown, text.html.markdown.multimarkdown</string>
+	<key>uuid</key>
+	<string>2FA93A26-DC17-408B-A28B-3B849847E5C4</string>
+</dict>
+</plist>
