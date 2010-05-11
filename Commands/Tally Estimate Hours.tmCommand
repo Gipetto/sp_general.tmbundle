@@ -19,13 +19,13 @@ doc = doc.split(/---+/).map { |section|
 
 		time_block.each { |block|
 			if block.match(/^(Time)/)
-				h = time_block[0].match(/^([0-9\.]+)\s*hrs\s*$/)
+				h = block.match(/^([0-9\.]+)\s*hrs\s*?$/)
 				hours_dev += h[1].to_f if h != nil
 
-				h = time_block[0].match(/^([0-9\.]+)\s*hrs testing\s*$/)
+				h = block.match(/^([0-9\.]+)\s*hrs testing\s*?$/)
 				hours_testing += h[1].to_f if h != nil
 
-				h = time_block[0].match(/^([0-9\.]+)\s*hrs revisions\s*$/)
+				h = block.match(/^([0-9\.]+)\s*hrs revisions\s*?$/)
 				hours_revisions += h[1].to_f if h != nil
 			end
 		}
