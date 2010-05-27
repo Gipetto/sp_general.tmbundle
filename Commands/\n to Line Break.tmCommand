@@ -6,8 +6,8 @@
 	<string>nop</string>
 	<key>command</key>
 	<string>#!/bin/bash
-sed "s/\\\n/\\
-/g"</string>
+sed -e "s/\\\n/\\
+/g" -e "s/\\\t/	/g"</string>
 	<key>input</key>
 	<string>document</string>
 	<key>name</key>

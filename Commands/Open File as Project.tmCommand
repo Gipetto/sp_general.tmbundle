@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/bin/bash
+CURRENT_FILE=$TM_FILEPATH
+CURRENT_DIR=$TM_DIRECTORY
+CURRENT_LINE=$TM_LINE_NUMBER
+
+/usr/bin/osascript -e "tell application \"TextMate\" to close (every window whose name is \"$TM_FILENAME\")"
+
+mate "$CURRENT_DIR"
+mate -l $CURRENT_LINE "$CURRENT_FILE"</string>
+	<key>input</key>
+	<string>none</string>
+	<key>name</key>
+	<string>Open File as Project</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>uuid</key>
+	<string>62A62E1E-CCAF-4F8B-BF87-74482F88A261</string>
+</dict>
+</plist>

@@ -16,7 +16,7 @@ Uses PHP's JSON decode function to allow for easy viewing of JSON encoded data.
 
 ## \n to line break
 
-Quick SED one liner to translate \n chars in to real line breaks. Helps when viewing serialized data or data that's been shoved to the error log.
+Quick SED one liner to translate \n chars in to real line breaks and \t chars in to real tabs. Helps when viewing serialized data or data that's been shoved to the error log.
 
 ## strip blank lines
 
@@ -34,6 +34,10 @@ Allows for text to be appended to all of the selected lines.
 
 Copy the path to the current file to the clipboard.
 
+## Open File as Project
+
+Reopens the current file's parent folder as a project (if the file is not within a project window already). Handy for when you've remote edited a file using an FTP editor but need to open more files and want them all to come in to a single project window.
+
 ## PayPeriod
 
 Takes a CSV formatted in the CF recent line items format and condenses it down to just the hours recorded and adds in a total. That's all I'm gonna say about that.
@@ -41,6 +45,10 @@ Takes a CSV formatted in the CF recent line items format and condenses it down t
 ## urlDecode
 
 Uses PHP's urldecode function to show the decoded version of an encoded URL.
+
+## CURL url
+
+Does what it says. Takes the current word (whether highlighted or wether the carat is just within the url) and attempts to curl it. No attempt is made to check for a valid url before running curl. Result is returned in a new document.
 
 ## Tally Estimate Hours
 
