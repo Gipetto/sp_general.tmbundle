@@ -11,8 +11,16 @@ require ENV['TM_SUPPORT_PATH'] + '/lib/current_word'
 require 'open3'
 require 'cgi'
 
-theUri = Word.current_word('a-zA-Z0-9#\-\.:;%/?&amp;=', :both)
-stdin, stdout, stderr = Open3.popen3("curl -s \"#{theUri}\"")
+theUri = Word.current_word('a-zA-Z0-9#\-_\.:;%/?&amp;=@!$^\*\+', :both)
+
+if theUri.include? '@'
+	auth, uri = theUri.split('@')
+	theCommand = "curl -s  -u #{auth} \"#{uri}\""
+else
+	theCommand = "curl -s \"#{theUri}\""
+end
+
+stdin, stdout, stderr = Open3.popen3(theCommand)
 TextMate::IO.exhaust(:out =&gt; stdout, :err =&gt; stderr) do |data|
 	puts data.rstrip
 end</string>

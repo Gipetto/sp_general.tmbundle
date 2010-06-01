@@ -16,6 +16,8 @@ mate "$CURRENT_DIR"
 mate -l $CURRENT_LINE "$CURRENT_FILE"</string>
 	<key>input</key>
 	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>^~@o</string>
 	<key>name</key>
 	<string>Open File as Project</string>
 	<key>output</key>

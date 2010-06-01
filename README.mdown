@@ -50,6 +50,8 @@ Uses PHP's urldecode function to show the decoded version of an encoded URL.
 
 Does what it says. Takes the current word (whether highlighted or wether the carat is just within the url) and attempts to curl it. No attempt is made to check for a valid url before running curl. Result is returned in a new document.
 
+If current word contains credentials, (ie: "user:pass@http://example.com") then curl will attempt to send user:pass credentials.
+
 ## Tally Estimate Hours
 
 Adds the Tally of hours in a CF formatted Estimate document.
