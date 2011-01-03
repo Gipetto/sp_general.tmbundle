@@ -7,7 +7,8 @@
 	<key>command</key>
 	<string>#!/usr/bin/env php 
 &lt;?php
-print_r(parse_str(file_get_contents('php://stdin')));
+parse_str(file_get_contents('php://stdin'), $data);
+print_r($data);
 ?&gt;</string>
 	<key>input</key>
 	<string>selection</string>
