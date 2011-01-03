@@ -11,10 +11,14 @@ print_r(json_decode(file_get_contents('php://stdin')));
 ?&gt;</string>
 	<key>input</key>
 	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>^~@J</string>
 	<key>name</key>
 	<string>JSON Decode</string>
 	<key>output</key>
 	<string>replaceSelectedText</string>
+	<key>scope</key>
+	<string>text.plain</string>
 	<key>uuid</key>
 	<string>A3CEA904-D43B-4E86-8B9E-B726D2620F00</string>
 </dict>

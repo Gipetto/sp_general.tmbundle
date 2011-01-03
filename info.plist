@@ -35,15 +35,18 @@
 				<key>items</key>
 				<array>
 					<string>BE0C23B5-9F44-4B74-847E-5A0E2FC44F91</string>
+					<string>6DDED11A-F650-4384-8FE3-3AA75A2F9694</string>
+					<string>E2CAA0EA-B303-48DE-A589-B93F8DB8D09F</string>
 				</array>
 				<key>name</key>
-				<string>URL Encoding</string>
+				<string>URLs</string>
 			</dict>
 			<key>AB5EF667-C79F-4A91-A315-8812F3E8DD84</key>
 			<dict>
 				<key>items</key>
 				<array>
 					<string>A3CEA904-D43B-4E86-8B9E-B726D2620F00</string>
+					<string>7FFB4BB9-CBDE-4B2B-81A5-DC0DFA59787C</string>
 				</array>
 				<key>name</key>
 				<string>JSON</string>
@@ -67,6 +70,8 @@
 		<string>C0E5B9C7-AD13-45F6-B018-36FD7A78C86B</string>
 		<string>9C934A81-E7D4-4AAA-BB7F-FF7611E203C4</string>
 		<string>D09D85E4-DECC-46D1-8DA6-13D2301E69CF</string>
+		<string>6DDED11A-F650-4384-8FE3-3AA75A2F9694</string>
+		<string>E2CAA0EA-B303-48DE-A589-B93F8DB8D09F</string>
 		<string>18C2865A-83AF-47BF-8BEB-9A4745359C8C</string>
 		<string>2F83160E-5D72-4375-B0D0-051CA509065E</string>
 		<string>A4E8A68E-CC1F-4D07-8D6E-ACA345CC3842</string>
@@ -74,6 +79,7 @@
 		<string>A3B18CEE-438A-4B54-8E09-A21EEE93EFF8</string>
 		<string>B242904B-18F2-4B34-B941-7BFD26D60633</string>
 		<string>A3CEA904-D43B-4E86-8B9E-B726D2620F00</string>
+		<string>7FFB4BB9-CBDE-4B2B-81A5-DC0DFA59787C</string>
 		<string>E9DF6005-36B4-4C92-BD84-1932C4CC6E34</string>
 		<string>2FA93A26-DC17-408B-A28B-3B849847E5C4</string>
 		<string>BE0C23B5-9F44-4B74-847E-5A0E2FC44F91</string>

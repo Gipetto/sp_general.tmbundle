@@ -10,10 +10,14 @@ sed -e "s/\\\n/\\
 /g" -e "s/\\\t/	/g"</string>
 	<key>input</key>
 	<string>document</string>
+	<key>keyEquivalent</key>
+	<string>^~@N</string>
 	<key>name</key>
 	<string>\n to Line Break</string>
 	<key>output</key>
 	<string>replaceDocument</string>
+	<key>scope</key>
+	<string>text.plain</string>
 	<key>uuid</key>
 	<string>18C2865A-83AF-47BF-8BEB-9A4745359C8C</string>
 </dict>
