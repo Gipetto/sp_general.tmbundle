@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env php 
+&lt;?php
+$array = json_decode(file_get_contents('php://stdin'), true);
+parse_str(urldecode($array['data']), $array['data']);
+
+print_r($array);
+?&gt;</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>^~@B</string>
+	<key>name</key>
+	<string>Decode CB Ajax</string>
+	<key>output</key>
+	<string>replaceSelectedText</string>
+	<key>scope</key>
+	<string>text.plain</string>
+	<key>uuid</key>
+	<string>7FFB4BB9-CBDE-4B2B-81A5-DC0DFA59787C</string>
+</dict>
+</plist>
